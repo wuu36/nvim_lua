@@ -11,6 +11,7 @@ return require('packer').startup(function()
     requires = {{'nvim-lua/plenary.nvim'}}
   }
   use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
@@ -18,4 +19,7 @@ return require('packer').startup(function()
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip' 
+  use 'saadparwaiz1/cmp_luasnip'
+
+  use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
 end)
