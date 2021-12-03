@@ -1,4 +1,4 @@
-require('plugins') 
+require('plugins')
 require('keybings')
 require('lsp')
 require('basices')
@@ -11,6 +11,3 @@ require('treesitter-config')
 require('whichkey-config')
 require('telescope-config')
 require('colors')
-
-
-
