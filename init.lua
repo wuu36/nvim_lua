@@ -1,5 +1,6 @@
-require('plugins')
+require('plugins') 
 require('keybings')
+require('lsp')
 require('basices')
 require('options')
 require('nvim-tree-config')
@@ -10,7 +11,6 @@ require('treesitter-config')
 require('whichkey-config')
 require('telescope-config')
 require('colors')
-require('cmp-config')
 
 
 
