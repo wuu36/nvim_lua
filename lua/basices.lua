@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.o.number  =true
+vim.o.number = true
 vim.o.relativenumber = true
 vim.o.wrap = false
 vim.o.expandtab = true
@@ -22,7 +22,6 @@ vim.o.showtabline = 2
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
 vim.o.hidden = true
-
 
 vim.g["netrw_banner"] = 0
 vim.g["netrw_liststyle"] = 3
