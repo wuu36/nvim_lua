@@ -1,8 +1,5 @@
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-require'lspconfig'.html.setup {capabilities = capabilities}
-require'lspconfig'.cssls.setup {capabilities = capabilities}
-require'lspconfig'.pylsp.setup {capabilities = capabilities}
 
 local system_name
 if vim.fn.has("mac") == 1 then
@@ -46,4 +43,43 @@ require'lspconfig'.sumneko_lua.setup {
     }
   }
 }
+
+
+require'lspconfig'.html.setup {capabilities = capabilities}
+require'lspconfig'.cssls.setup {capabilities = capabilities}
+require'lspconfig'.pylsp.setup {capabilities = capabilities}
+
+local M = {}
+
+M.icons = {
+  Class = " ",
+  Color = " ",
+  Constant = " ",
+  Constructor = " ",
+  Enum = "了 ",
+  EnumMember = " ",
+  Field = " ",
+  File = " ",
+  Folder = " ",
+  Function = " ",
+  Interface = "ﰮ ",
+  Keyword = " ",
+  Method = "ƒ ",
+  Module = " ",
+  Property = " ",
+  Snippet = "﬌ ",
+  Struct = " ",
+  Text = " ",
+  Unit = " ",
+  Value = " ",
+  Variable = " ",
+}
+
+function M.setup()
+  local kinds = vim.lsp.protocol.CompletionItemKind
+  for i, kind in ipairs(kinds) do kinds[i] = M.icons[kind] or kind
+  end
+end
+return M
+
 
