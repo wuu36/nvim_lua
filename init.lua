@@ -16,5 +16,7 @@ require('blankline-config')
 require('colorizer-config')
 require('toggleterm-config')
 require('format-config')
+require('clangformat-config')
+require('comment-config')
 require('colors')
 

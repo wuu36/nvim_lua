@@ -134,6 +134,11 @@ _G.packer_plugins = {
     path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/hoob3rt/lualine.nvim"
   },
+  neovim = {
+    loaded = true,
+    path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/neovim",
+    url = "https://github.com/rose-pine/neovim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -149,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/nvim-colorizer.lua",
     url = "https://github.com/norcalli/nvim-colorizer.lua"
   },
+  ["nvim-comment"] = {
+    loaded = true,
+    path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/nvim-comment",
+    url = "https://github.com/terrortylor/nvim-comment"
+  },
   ["nvim-lspconfig"] = {
     loaded = true,
     path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
@@ -163,6 +173,13 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-ts-rainbow"] = {
+    load_after = {},
+    loaded = true,
+    needs_bufread = false,
+    path = "/home/wuu36/.local/share/nvim/site/pack/packer/opt/nvim-ts-rainbow",
+    url = "https://github.com/p00f/nvim-ts-rainbow"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
@@ -194,6 +211,11 @@ _G.packer_plugins = {
     path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["vim-clang-format"] = {
+    loaded = true,
+    path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/vim-clang-format",
+    url = "https://github.com/rhysd/vim-clang-format"
+  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/wuu36/.local/share/nvim/site/pack/packer/start/vim-vsnip",
@@ -207,6 +229,11 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Load plugins in order defined by `after`
+time([[Sequenced loading]], true)
+vim.cmd [[ packadd nvim-treesitter ]]
+vim.cmd [[ packadd nvim-ts-rainbow ]]
+time([[Sequenced loading]], false)
 if should_profile then save_profiles() end
 
 end)

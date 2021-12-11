@@ -33,7 +33,7 @@ capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 -- Enable the following language servers
 -- local servers = { 'clangd', 'rust_analyzer', 'pyright', 'tsserver' }
-local servers = {'pylsp', 'html', 'cssls'}
+local servers = {'pylsp', 'html', 'cssls', 'clangd'}
 for _, lsp in ipairs(servers) do nvim_lsp[lsp].setup {on_attach = on_attach, capabilities = capabilities} end
 
 -- Example custom server
@@ -83,7 +83,7 @@ require'lspconfig'.sumneko_lua.setup {
 }
 
 -- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect,menu,noinsert'
+vim.o.completeopt = 'menuone,noselect,menu'
 
 -- luasnip setup
 local luasnip = require 'luasnip'
@@ -156,15 +156,15 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagn
 
 vim.diagnostic.config({virtual_text = true, signs = true, underline = true, update_in_insert = false, severity_sort = false})
 
-vim.cmd [[
-  highlight DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
-  highlight DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500 gui=bold
-  highlight DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF gui=bold
-  highlight DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF gui=bold
-
-  sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
-  sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
-  sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
-  sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
-]]
+-- vim.cmd [[
+--   highlight DiagnosticLineNrError guibg=#51202A guifg=#FF0000 gui=bold
+--   highlight DiagnosticLineNrWarn guibg=#51412A guifg=#FFA500 gui=bold
+--   highlight DiagnosticLineNrInfo guibg=#1E535D guifg=#00FFFF gui=bold
+--   highlight DiagnosticLineNrHint guibg=#1E205D guifg=#0000FF gui=bold
+--
+--   sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=DiagnosticLineNrError
+--   sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarn linehl= numhl=DiagnosticLineNrWarn
+--   sign define DiagnosticSignInfo text= texthl=DiagnosticSignInfo linehl= numhl=DiagnosticLineNrInfo
+--   sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=DiagnosticLineNrHint
+-- ]]
 

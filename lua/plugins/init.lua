@@ -1,5 +1,6 @@
 return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
+  use 'rose-pine/neovim'
   use 'folke/tokyonight.nvim'
   use {'nvim-treesitter/nvim-treesitter', run = ":TSUpdate"}
   use {'hoob3rt/lualine.nvim', requires = {'kyazdani42/nvim-web-devicons', opt = true}}
@@ -21,11 +22,14 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'
 
   use {'lewis6991/gitsigns.nvim', requires = 'nvim-lua/plenary.nvim'}
+  use 'rhysd/vim-clang-format'
   use 'windwp/nvim-autopairs'
   use 'norcalli/nvim-colorizer.lua'
   --  use 'glepnir/dashboard-nvim'
   use 'lukas-reineke/indent-blankline.nvim'
+  use {'p00f/nvim-ts-rainbow', after = "nvim-treesitter"}
   use 'akinsho/toggleterm.nvim'
+  use 'terrortylor/nvim-comment'
   use 'lukas-reineke/format.nvim'
 end)
 
